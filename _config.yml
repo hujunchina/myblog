@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: My Blog
-subtitle: ''
-description: ''
-keywords:
-author: 胡军
-language: zh-cn
+title: 日积月累
+subtitle: 把遇到的问题和知识点看透并记录下来
+keywords: hujunchina
+description: hujunchina 博客 blog
+author: hujunchina
+language: zh
 timezone: ''
 
 # URL
@@ -27,7 +27,9 @@ public_dir: public
 tag_dir: tags
 archive_dir: archives
 category_dir: categories
+about_dir: about
 code_dir: downloads/code
+project_dir: projects
 i18n_dir: :lang
 skip_render:
 
@@ -45,12 +47,12 @@ post_asset_folder: false
 relative_link: false
 future: true
 highlight:
-  enable: true
-  line_number: true
+  enable: false
+  line_number: false
   auto_detect: false
   tab_replace: ''
   wrap: true
-  hljs: false
+  hljs: true
 prismjs:
   enable: false
   preprocess: true
@@ -99,7 +101,7 @@ ignore:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: cold-stone
-project_dir: projects
+
 avatar: avatar.png
 comment:
   repo: xrr2016/blog
