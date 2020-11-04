@@ -59,11 +59,13 @@ date: 2020-10-22 21:11:37
 categories:
 	- 笔记
 tags: 
-	- Java
+	- JAVA
 	- 编程
 ```
 
 上面是正确格式，注意hexo采用markdown格式保存文档。
+
+规范：tags 标签英文使用全大写
 
 
 

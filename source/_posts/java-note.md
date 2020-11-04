@@ -4,7 +4,7 @@ date: 2020-10-22 21:11:37
 categories:
 	- 笔记
 tags: 
-	- Java
+	- JAVA
 	- 编程
 ---
 
@@ -14,7 +14,7 @@ tags:
 
 ## 1.1 Lambda 表达式
 
-```
+```java
 interface CheckPerson {
     boolean test(Person p);
 }
@@ -115,31 +115,32 @@ Set<Person> rosterSetLambda = transferElements(roster, () -> { return new HashSe
 Set<Person> rosterSet = transferElements(roster, HashSet::new);
 ```
 
-## 1.2 JVM 
+## 1.2 JVM 参数
 
-| 参数                               | 缩写                       | 含义                                                         | 使用                                                         |
-| ---------------------------------- | -------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| -Xss                               | stack space                | 设置栈内存大小                                               | -Xss100M                                                     |
-| -Xms                               | memory space               | 设置初始堆内存大小                                           |                                                              |
-| -Xmx                               | memory max space           | 设置堆最大内存                                               |                                                              |
-| --XX:MaxMetaspaceSize              | MaxMetaspaceSize           | 设置元区域大小                                               | -XX:MaxMetaspaceSize=512m                                    |
-| -Xnoclassgc                        | no class gc                | 使GC不对方法区类信息卸载                                     |                                                              |
-| -XX:+UseConcMarkSweepGC            | use CMS gc                 | 设置使用CMS GC                                               |                                                              |
-| -XX:+UseG1GC                       | use G1 gc                  | 设置使用G1 GC                                                |                                                              |
-| -XX:+UseCMSCompactAtFullCollection | use compact at full gc     | 在fullgc下对内存整理                                         |                                                              |
-| -XX:CMSFullGCsBeforeCompaction     | one of fullgc compact      | 执行多次fullgc后来一次压缩                                   |                                                              |
-| -XX:DisableExplicitGC              | disable explicit full gc   | 禁止调用full gc                                              |                                                              |
-| -XX:PretenureSizeThreshold         | new to old gen size        | 晋升年老代的对象大小, 10M                                    |                                                              |
-| -XX:MaxTenuringThreshold           | new to old gen max-age     | 晋升老年代的最大年龄,15                                      |                                                              |
-| jps                                | jvm process state tool     | 显示 HotSpot 虚拟机进程。                                    | jps -l -m                                                    |
-| jstat                              | jvm statistics Monitoring  | 监视虚拟机运行时状态，类装载、内存、垃圾收集、JIT 编译等运行数据。 | jstat -gc/-gccapacity/-gcnew/-gcnewcapacity/-gcold/-gcutil pid |
-| jmap                               | jvm memory map             | 用于生成堆转储快照                                           |                                                              |
-| jstack                             | Stack Trace for java       | 生成 java 虚拟机当前时刻线程快照                             |                                                              |
-| jhat                               | java hat                   | 用来分析 jmap 生成的 dump 文件                               |                                                              |
-| jinfo                              | jvm information            | 用于实时查看和调整虚拟机运行参数                             |                                                              |
-| -XX:NewRatio                       | new / old gen ratio        | 设置新生代老年代比例                                         |                                                              |
-| -XX:NewSize                        | new gen size               | 新生代内存大小                                               |                                                              |
-| -XX:SurviorRatio                   | eden / survior arear ratio | eden/存活区内存大小比例                                      |                                                              |
+| 参数                                | 缩写                       | 含义                                                         | 使用                                                         |
+| ----------------------------------- | -------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| -Xss                                | stack space                | 设置栈内存大小                                               | -Xss100M                                                     |
+| -Xms                                | memory space               | 设置初始堆内存大小                                           | -Xms500M                                                     |
+| -Xmx                                | memory max space           | 设置堆最大内存                                               | -Xmx500M                                                     |
+| -Xmn                                | Memory  naive              | 设置年轻代大小                                               | -Xmn250M                                                     |
+| --XX:MaxMetaspaceSize               | MaxMetaspaceSize           | 设置元区域大小                                               |                                                              |
+| -Xnoclassgc                         | no class gc                | 使GC不对方法区类信息卸载                                     |                                                              |
+| -XX:+UseConcMarkSweepGC             | use CMS gc                 | 设置使用CMS GC                                               |                                                              |
+| -XX:+UseG1GC                        | use G1 gc                  | 设置使用G1 GC                                                |                                                              |
+| -XX:+UseCMSCompact AtFullCollection | use compact at full gc     | 在fullgc下对内存整理                                         |                                                              |
+| -XX:CMSFullGCs BeforeCompaction     | one of fullgc compact      | 执行多次fullgc后来一次压缩                                   |                                                              |
+| -XX:DisableExplicitGC               | disable explicit full gc   | 禁止调用full gc                                              |                                                              |
+| -XX:PretenureSizeThreshold          | new to old gen size        | 晋升年老代的对象大小, 10M                                    |                                                              |
+| -XX:MaxTenuringThreshold            | new to old gen max-age     | 晋升老年代的最大年龄,15                                      |                                                              |
+| jps                                 | jvm process state tool     | 显示 HotSpot 虚拟机进程。                                    | jps -l -m                                                    |
+| jstat                               | jvm statistics Monitoring  | 监视虚拟机运行时状态，类装载、内存、垃圾收集、JIT 编译等运行数据。 | jstat -gc/-gccapacity/-gcnew/-gcnewcapacity/-gcold/-gcutil pid |
+| jmap                                | jvm memory map             | 用于生成堆转储快照                                           |                                                              |
+| jstack                              | Stack Trace for java       | 生成 java 虚拟机当前时刻线程快照                             |                                                              |
+| jhat                                | java hat                   | 用来分析 jmap 生成的 dump 文件                               |                                                              |
+| jinfo                               | jvm information            | 用于实时查看和调整虚拟机运行参数                             |                                                              |
+| -XX:NewRatio                        | new / old gen ratio        | 设置新生代老年代比例                                         |                                                              |
+| -XX:NewSize                         | new gen size               | 新生代内存大小                                               |                                                              |
+| -XX:SurviorRatio                    | eden / survior arear ratio | eden/存活区内存大小比例                                      |                                                              |
 
 ## 1.3 切面
 
@@ -174,3 +175,5 @@ public class AOPService {
 ```
 
 (动态代理)
+
+切面有哪些标签注解？

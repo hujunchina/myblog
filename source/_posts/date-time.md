@@ -4,8 +4,8 @@ date: 2020-10-23 11:52:06
 categories:
 	- 基础知识
 tags:
-	- Linux
-	- Java
+	- LINUX
+	- JAVA
 ---
 
 # 1. Unix 时间戳
@@ -71,5 +71,12 @@ fmt.Println(t.Format("20060102150405"))    //当前时间戳
 t1 := time.Now().Unix()  //1564552562
 fmt.Println(time.Now().Format("2006-01-02"))  //2019-07-31
 fmt.Println(time.Now().Format("2006-01-02 15:04:05"))  //2019-07-31 13:57:52
+```
+
+## 1.7 数据库时间转换
+
+```sql
+time = from_unixtimestap(123456) // 时间戳转正常时间
+time = unix_timestamp
 ```
 

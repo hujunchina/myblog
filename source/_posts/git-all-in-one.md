@@ -2,12 +2,10 @@
 title: Git操作和问题总结
 date: 2020-10-23 14:07:25
 categories:
-	- 基础知识
+	- 必备知识
 tags:
 	- 编程
-	- 工具
-typora-root-url: ../images
-
+	- GIT
 ---
 
 # 1. 基本操作
@@ -96,6 +94,15 @@ git stash list
 git stash show
 ```
 
+## 1.7 如何打标签
+
+```
+git tag			查看标签
+git tag -a "1.0" -m "myversion" 	打标签
+git show v1.0 	查看标签内容
+git tag -d v1.0 删除标签	
+```
+
 
 
 # 2. 基本原理
@@ -110,7 +117,7 @@ git reset HEAD
 git clean -f  Removing untracked_file
 ```
 
-
+Git操作
 
 ```
 1. Git init->git status
